@@ -1,6 +1,6 @@
 #include <AltController.h>
 
-// Used example code from previous posts and deleted enter and space bar
+//CHANGED DOWN KEY INTO ACTION_HOLD_TIME AND INCREASE NUMBER TO CROUCH FOR LONGER
 
 // Pins for Arrow keys
 int UP_PIN = 6;
@@ -10,7 +10,7 @@ int RIGHT_PIN = 9;
 
 // Timing configuration (in milliseconds)
 int KEY_HOLD_TIME = 25;    // Quick response for movement keys
-int ACTION_HOLD_TIME = 50; // Slightly longer for action buttons
+int ACTION_HOLD_TIME = 475; // Slightly longer for action buttons
 
 AltController controller;
 
@@ -19,7 +19,7 @@ void setup() {
     // Configure Arrow keys
     controller.addKeyPress(UP_PIN, KEY_UP_ARROW, KEY_HOLD_TIME);
     controller.addKeyPress(LEFT_PIN, KEY_LEFT_ARROW, KEY_HOLD_TIME);
-    controller.addKeyPress(DOWN_PIN, KEY_DOWN_ARROW, KEY_HOLD_TIME);
+    controller.addKeyPress(DOWN_PIN, KEY_DOWN_ARROW, ACTION_HOLD_TIME);
     controller.addKeyPress(RIGHT_PIN, KEY_RIGHT_ARROW, KEY_HOLD_TIME);
     }
 
